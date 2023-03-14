@@ -25,7 +25,7 @@ namespace gyak4
         }
         private void LoadData()
         {
-            Flats = context.Flats.ToList();
+            Flats = context.Flat.ToList();
         }
     }
 }
