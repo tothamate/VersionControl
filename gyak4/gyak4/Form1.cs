@@ -118,6 +118,7 @@ namespace gyak4
             int lastRowID = xlSheet.UsedRange.Rows.Count;
             int lastColumnID = xlSheet.UsedRange.Columns.Count;
             Excel.Range tablaRange = xlSheet.get_Range(GetCell(1, 1), GetCell(lastRowID, lastColumnID));
+
             tablaRange.BorderAround2(Excel.XlLineStyle.xlContinuous, Excel.XlBorderWeight.xlThick);
         }
 
