@@ -20,7 +20,7 @@ namespace gyak005
 
         private void GetRates()
         {
-            var mnbService = new MnbServiceReferenceSoapClient();
+            var mnbService = new MNBArfolyamServiceSoapClient();
 
             var request = new GetExchangeRatesRequestBody()
             {
@@ -28,6 +28,9 @@ namespace gyak005
                 startDate = "2020-01-01",
                 endDate = "2020-06-30"
             };
+
+            var response = mnbService.GetExchangeRates(request);
+            var result = response.GetExchangeRatesResult;
         }
 
         private void Form1_Load(object sender, EventArgs e)
