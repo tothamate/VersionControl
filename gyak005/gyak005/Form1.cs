@@ -1,4 +1,5 @@
-﻿using gyak005.MnbServiceReference;
+﻿using gyak005.Entities;
+using gyak005.MnbServiceReference;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +14,12 @@ namespace gyak005
 {
     public partial class Form1 : Form
     {
+        BindingList<RateData> Rates = new BindingList<RateData>();
         public Form1()
         {
+
             InitializeComponent();
+            dataGridView1.DataSource = Rates;
             GetRates();
         }
 
@@ -32,6 +36,7 @@ namespace gyak005
 
             var response = mnbService.GetExchangeRates(request);
             var result = response.GetExchangeRatesResult;
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
