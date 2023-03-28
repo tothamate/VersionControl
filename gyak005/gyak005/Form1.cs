@@ -34,13 +34,16 @@ namespace gyak005
 
                 var rate = (XmlElement)item.ChildNodes[0];
                 var currency = rate.GetAttribute("curr");
-                var value = rate.InnerText;
+                var value = decimal.Parse(rate.InnerText);
+                var unit = int.Parse(rate.GetAttribute("unit"));
 
                 Rates.Add(new RateData()
                 {
                     Date = DateTime.Parse(date),
                     Currency = currency,
-                    Value = decimal.Parse(value)
+                    Value = unit != 0 
+                        ? value / unit
+                        : 0
                 }) ;
             }
             
