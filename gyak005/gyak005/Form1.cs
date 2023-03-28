@@ -15,6 +15,19 @@ namespace gyak005
         public Form1()
         {
             InitializeComponent();
+            GetRates();
+        }
+
+        private void GetRates()
+        {
+            var mnbService = new MnbServiceReferenceSoapClient();
+
+            var request = new GetExchangeRatesRequestBody()
+            {
+                currencyNames = "EUR",
+                startDate = "2020-01-01",
+                endDate = "2020-06-30"
+            };
         }
 
         private void Form1_Load(object sender, EventArgs e)
