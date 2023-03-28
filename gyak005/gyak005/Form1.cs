@@ -1,4 +1,5 @@
-﻿using System;
+﻿using gyak005.MnbServiceReference;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
