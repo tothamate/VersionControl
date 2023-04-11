@@ -29,7 +29,10 @@ namespace gyak06
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.conveyorTimer = new System.Windows.Forms.Timer(this.components);
+            this.createTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // mainPanel
@@ -38,6 +41,16 @@ namespace gyak06
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(776, 426);
             this.mainPanel.TabIndex = 0;
+            // 
+            // conveyorTimer
+            // 
+            this.conveyorTimer.Interval = 10;
+            this.conveyorTimer.Tick += new System.EventHandler(this.conveyorTimer_Tick_1);
+            // 
+            // createTimer
+            // 
+            this.createTimer.Interval = 3000;
+            this.createTimer.Tick += new System.EventHandler(this.createTimer_Tick_1);
             // 
             // Form1
             // 
@@ -55,6 +68,8 @@ namespace gyak06
         #endregion
 
         private System.Windows.Forms.Panel mainPanel;
+        private System.Windows.Forms.Timer conveyorTimer;
+        private System.Windows.Forms.Timer createTimer;
     }
 }
 

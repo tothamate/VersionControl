@@ -20,10 +20,10 @@ namespace gyak06.Entities
 
         private void Ball_Paint(object sender, PaintEventArgs e)
         {
-            DrawImage(e.Graphics);
+            DrawBall(e.Graphics);
         }
 
-        protected void DrawImage(Graphics g)
+        protected void DrawBall(Graphics g)
         {
             g.FillEllipse(new SolidBrush(Color.Blue), 0, 0, Width, Height);
         }
