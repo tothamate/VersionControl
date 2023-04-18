@@ -21,7 +21,9 @@ namespace mintazh
         public Form1()
         {
             InitializeComponent();
-            
+            this.AutoScroll = true;
+            ProcessXml();
+            DisplayProducts();
         }
 
         public string LoadXml(string fileName)
@@ -74,6 +76,25 @@ namespace mintazh
                     };
                     _products.Add(drink);
                 }
+            }
+
+            
+        }
+
+        private void DisplayProducts()
+        {
+            var orderedProducts = from p in _products
+                                  orderby p.Title
+                                  select p;
+            Product előző = null;
+            foreach (var product in orderedProducts)
+            {
+                this.Controls.Add(product);
+                if (előző != null)
+                    product.Top = előző.Top + előző.Height;
+                else
+                    product.Top = 0;
+                előző = product;
             }
         }
 
